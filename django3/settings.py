@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '7yrrtp=xxqjfsk8t2x(!09$c7xiy1cc(u=iuhw7pxi1+m+zea9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 LOGIN_URL = "/account/login"
@@ -145,3 +145,9 @@ EMAIL_PORT=587
 EMAIL_USE_TLS=True
 EMAIL_HOST_USER='soufianmrabti3@gmail.com'
 EMAIL_HOST_PASSWORD='gd#@ay9581'
+
+
+try:
+    from .local_settings import *
+except ImportError:
+    pass
