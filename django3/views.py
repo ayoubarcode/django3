@@ -4,7 +4,9 @@ from django.template import RequestContext
 
 
 def handler404(request, *args, **argv):
-    return Http404('NOT FOUND ')
+    response = render(request,'404.html', {})
+    response.status_code = 404
+    return response
     
 
 
