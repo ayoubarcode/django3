@@ -27,7 +27,7 @@ handler500 = 'django3.views.handler500'
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('/ayoub/arahmat/9581/admin', admin.site.urls),
     path('',home, name="home"),
     path('tasks/', include('tasks.urls',namespace='tasks')),
     path('account/', include('accounts.urls',namespace='accounts')),
