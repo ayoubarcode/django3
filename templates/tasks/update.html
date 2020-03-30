@@ -1,0 +1,30 @@
+
+    <form class="text-center update-form" style="color: #757575;" method="POST" action="">
+    {% csrf_token %}
+
+
+    <input type="hidden" name="task_id" value="{{task_detail.id}}">
+      <div class="md-form">
+        {{form.title}}
+    
+      </div>
+
+
+      <div class="d-flex justify-content-around">
+        <div>
+          <div class="form-check">
+            {{form.complete}}
+            <label class="form-check-label" for="materialLoginFormRemember">Complete</label>
+          </div>
+        </div>
+     
+      </div>
+
+
+      <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0 update-task" 
+      type="submit"
+      onclick="update_final(event)">Update</button>
+
+
+    </form>
+ 

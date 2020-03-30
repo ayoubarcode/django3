@@ -1,0 +1,38 @@
+{% if tasks %}
+      {% for t  in tasks %}
+      <tr>
+     
+        {% if t.complete %}
+        <td><strike> {{t.title}}</strike></td>
+        {% else %}
+        <td>{{t.title}}</td>
+        {% endif %}
+
+        <td>{{t.created}}</td>
+
+        <td>
+
+          <button class="btn btn-primary btn-purple update"  
+       
+          onClick="update_task({{t.id}},event)">update</button>
+
+          <a href="{% url 'tasks:delete_task' t.id %}" 
+           class="btn btn-danger float-right"
+          onClick="delete_task({{t.id}}, event)"
+           >Danger</a>
+
+        </td>
+      </tr>
+      {% endfor %}
+
+      {% else %}
+
+       <tr>
+        <td colspan="4"> 
+        <div class="text-center" >
+        no data
+        </div>
+        </td>
+        </tr>
+      {% endif %}
+

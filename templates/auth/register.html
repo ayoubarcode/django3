@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+
+{% if form.errors %}
+<div class="container mt-5">
+<div class="alert alert-danger" role="alert">
+
+  {{form.errors}}
+ 
+</div>
+ {% endif %}
+    <!-- 
+        Default form register -->
+    <form class="text-center border border-light p-5" method="post">
+    {% csrf_token %}
+        <p class="h4 mb-4">Register</p>
+
+
+        {{form.username}}
+        {{form.email}}
+        {{form.first_name}}
+        {{form.last_name}}
+        {{form.password1}}
+        {{form.password2}}
+
+        <button class="btn btn-info my-4 btn-block" type="submit">Sign in</button>
+
+
+
+    </form>
+</div>
+
+
+
+
+{% endblock content %}
+
+
+{% block javascript %}
+<script>
+
+let password1 = document.querySelector('#id_password1');
+let password2 = document.querySelector('#id_password2');
+console.log("this is " , password1);
+password1.className = 'form-control mb-4';
+password1.placeholder = 'password'
+password2.placeholder = 'password confirmation'
+password2.className = 'form-control mb-4';
+
+</script>
+{% endblock javascript %}

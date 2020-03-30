@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1> {{category}}</h1>
+
+<ul>
+{% if products %}
+    {% for p in  products %}
+        <li> title  : {{p.title}}</li>
+         <li>price : {{p.price}}</li>
+         <li>category_id: {{p.categorie }}</li>
+
+         <br />
+         <br />
+         <br />
+      
+    {% endfor %}
+{% endif %}
+</ul>
+{% endblock content %}
