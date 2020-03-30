@@ -39,7 +39,6 @@
                 },
                 error: function(error) {
                     $.notify(" request error ", "warn");
-                    console.log("ERROR REQUEST");
                     
                 }
             })
@@ -96,11 +95,9 @@
             }, 
             success: function(data) {
                 get_tasks()
-                console.log(data)
             }
 
         })
-        console.log('yes working');
     }
   
 
@@ -118,7 +115,6 @@
 
             }, success: function(data) {
                 get_tasks();
-                console.log(data);
             }
         })
     }
